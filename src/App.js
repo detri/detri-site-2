@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Zoom from 'react-reveal/Zoom';
+import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -13,7 +14,9 @@ class App extends Component {
           <hr className="header-underline" />
         </Zoom>
         <Navigation />
-        <Home />
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
       </>
     );
   }
